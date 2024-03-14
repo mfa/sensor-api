@@ -85,6 +85,22 @@ DATABASES = {
 }
 
 
+if os.environ.get('SUPABASE_HOST'):
+    DATABASES = {
+        'default': {
+            'ENGINE' : 'django.db.backends.postgresql',
+            'NAME' : 'postgres',
+            'HOST' : os.environ.get('SUPABASE_HOST'),
+            'PASSWORD': os.environ.get('SUPABASE_PASSWORD'),
+            'PORT': 5432,
+            'USER': os.environ.get('SUPABASE_USER'),
+            # from database/settings
+            'CERT' : 'config.prod-ca-2021.crt',
+        }
+    }
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
