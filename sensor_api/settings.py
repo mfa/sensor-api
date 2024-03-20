@@ -30,6 +30,9 @@ else:
 
 ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev", "localhost"]
 
+# needed for CSRF
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
