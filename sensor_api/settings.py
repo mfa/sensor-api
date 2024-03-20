@@ -26,7 +26,7 @@ if APP_NAME:
 else:
     # local development
     SECRET_KEY = "django-insecure-g&bap52-c4m!kbd_owr*s#b)s30xl2aaxs5-%#%%m*zj^ops#a"
-    DEBUG = False
+    DEBUG = True
 
 ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev", "localhost"]
 
