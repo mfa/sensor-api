@@ -23,15 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 APP_NAME = os.environ.get("FLY_APP_NAME")
 if APP_NAME:
     SECRET_KEY = os.environ["SECRET_KEY"]
+
+    # needed for CSRF
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 else:
     # local development
     SECRET_KEY = "django-insecure-g&bap52-c4m!kbd_owr*s#b)s30xl2aaxs5-%#%%m*zj^ops#a"
     DEBUG = True
 
 ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev", "localhost"]
-
-# needed for CSRF
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
