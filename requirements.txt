@@ -5,6 +5,7 @@ gunicorn==21.2.0
 packaging==23.2
 psycopg[binary]==3.1.18
 python-ulid==2.5.0
+sentry-sdk[django]==2.0.1
 sqlparse==0.4.4
 uvicorn==0.28.0
 whitenoise==6.6.0
