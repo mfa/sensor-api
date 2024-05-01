@@ -47,3 +47,6 @@ class SensorData(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.RESTRICT)
     data = models.JSONField(default=dict, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.sensor.id} -- {self.id}"
