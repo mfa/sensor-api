@@ -21,7 +21,8 @@ class SensorAdmin(admin.ModelAdmin):
 
 @admin.register(SensorData)
 class SensorDataAdmin(admin.ModelAdmin):
-    list_display = ["id", "sensor", "data"]
+    list_display = ["id", "sensor", "data", "created"]
+    fields = ["id", "sensor", "data", "created"]
     list_filter = [
         "sensor__id",
         "sensor__owner__username",
